@@ -31,7 +31,20 @@ public class PlayerController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(groundCheck.position, transform.TransformDirection(Vector3.down), out hit, 0.4f, groundMask))
         {
+            string terrainType = hit.collider.gameObject.tag;
 
+            switch(terrainType)
+            {
+                default:
+                    speed = 12;
+                    break;
+                case "Low":
+                    speed = 3;
+                    break;
+                case "High":
+                    speed = 20;
+                    break;
+            }
         }
     }
 }
