@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -9,10 +10,59 @@ public class GameManager : MonoBehaviour
     bool gamePaused = false;
     bool endGame = false;
     bool win = false;
+    public int points = 0;
+
+    public int redKey = 0;
+    public int greenKey = 0;
+    public int goldKey = 0;
+
+    public void AddKey(KeyColor color)
+    {
+        if (color == KeyColor.Gold)
+        {
+            goldKey++;
+        }
+        else if (color == KeyColor.Green)
+        {
+            greenKey++;
+        }
+        else if (color == KeyColor.Red)
+        {
+            redKey++;
+        }
+    }
+
+    void PickUpChek()
+    {
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            Debug.Log($"Time: {timeToEnd}");
+            Debug.Log($"Keys red: {redKey}, green: {greenKey}, gold: {goldKey}");
+            Debug.Log($"Points: {points}");
+        }
+    }
+
+    public void AddPoints(int points)
+    {
+        points += points;
+    }
+
+    public void AddTime(int addTime)
+    {
+        timeToEnd += addTime;
+    }
+
+    public void FreezTime(int freez)
+    {
+        CancelInvoke("Stopper");
+        InvokeRepeating("Stopper", freez, 1);
+    }
+
+    
 
     void Start()
     {
-        if(gameManager == null)
+        if (gameManager == null)
         {
             gameManager = this;
         }
@@ -23,12 +73,13 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         PauseCheck();
+        PickUpChek();
     }
 
     void Stopper()
     {
         timeToEnd--;
-        Debug.Log("Time: " + timeToEnd + " s");
+        //Debug.Log("Time: " + timeToEnd + " s");
         if (timeToEnd <= 0)
         {
             timeToEnd = 0;
