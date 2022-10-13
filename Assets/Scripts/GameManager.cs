@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public static GameManager gameManager;
     [SerializeField] int timeToEnd;
     bool gamePaused = false;
+    bool endGame = false;
+    bool win = false;
 
     void Start()
     {
@@ -20,16 +22,21 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        
+        PauseCheck();
     }
 
     void Stopper()
     {
         timeToEnd--;
-        Debug.Log($"Time: {timeToEnd} s");
+        Debug.Log("Time: " + timeToEnd + " s");
         if (timeToEnd <= 0)
         {
-            timeToEnd = 100;
+            timeToEnd = 0;
+            endGame = true;
+        }
+        if (endGame)
+        {
+            EndGame();
         }
     }
 
@@ -45,5 +52,33 @@ public class GameManager : MonoBehaviour
         Debug.Log("Resume Game");
         Time.timeScale = 1f;
         gamePaused = false;
+    }
+
+    void PauseCheck()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (gamePaused)
+            {
+                ResumeGame();
+            }
+            else
+            {
+                PauseGame();
+            }
+        }
+    }
+
+    public void EndGame()
+    {
+        CancelInvoke("Stopper");
+        if (win)
+        {
+            Debug.Log("You Win!!! Reload?");
+        }
+        else
+        {
+            Debug.Log("You Lose!!! Reload?");
+        }
     }
 }
