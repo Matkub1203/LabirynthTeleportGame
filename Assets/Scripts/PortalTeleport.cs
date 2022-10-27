@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PortalTelport : MonoBehaviour
+public class PortalTeleport : MonoBehaviour
 {
     public Transform player;
     public Transform reciever;
@@ -16,6 +16,7 @@ public class PortalTelport : MonoBehaviour
             playerIsOverlapping = true;
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
@@ -26,7 +27,7 @@ public class PortalTelport : MonoBehaviour
 
     void Teleportation()
     {
-        if(playerIsOverlapping)
+        if (playerIsOverlapping)
         {
             Vector3 portalToPlayer = player.position - transform.position;
             float dotProduct = Vector3.Dot(transform.up, portalToPlayer);
