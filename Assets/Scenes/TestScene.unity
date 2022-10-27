@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &1088593 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3798603236086846144, guid: 00c25a711299fa34b9b059df246c2d83, type: 3}
-  m_PrefabInstance: {fileID: 806713781}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &23302489
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,11 +171,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &303845298 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1207475245928519457, guid: 6bfa5d892b7516144b0164c781a05355, type: 3}
-  m_PrefabInstance: {fileID: 1207475246656308293}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &443205720 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5472062653437303833, guid: 00c25a711299fa34b9b059df246c2d83, type: 3}
@@ -198,8 +188,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d38476e1c2f143d419f2d0beb81a37af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 303845298}
-  reciever: {fileID: 1088593}
+  player: {fileID: 0}
+  reciever: {fileID: 0}
 --- !u!1 &531026430
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,6 +336,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4107564785172242703, guid: 00c25a711299fa34b9b059df246c2d83, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8400000, guid: 6a4bc8df653589d4ab20f06e33f8e37e, type: 2}
+    - target: {fileID: 4839409306610576143, guid: 00c25a711299fa34b9b059df246c2d83, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 21cb92c5e4b1d7640b57e9e9f2054d0d, type: 2}
     - target: {fileID: 7383555350270463416, guid: 00c25a711299fa34b9b059df246c2d83, type: 3}
       propertyPath: m_Name
       value: PortalA
@@ -540,11 +538,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!4 &1585345004 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3798603236086846144, guid: 00c25a711299fa34b9b059df246c2d83, type: 3}
-  m_PrefabInstance: {fileID: 1844485689}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1678750717 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5472062653437303833, guid: 00c25a711299fa34b9b059df246c2d83, type: 3}
@@ -562,8 +555,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d38476e1c2f143d419f2d0beb81a37af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 303845298}
-  reciever: {fileID: 1585345004}
+  player: {fileID: 0}
+  reciever: {fileID: 0}
 --- !u!1001 &1844485689
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -619,12 +612,60 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4107564785172242703, guid: 00c25a711299fa34b9b059df246c2d83, type: 3}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8400000, guid: 7527279ee0042d143acc4f784796f616, type: 2}
+    - target: {fileID: 4839409306610576143, guid: 00c25a711299fa34b9b059df246c2d83, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 316b9e9fcc9453f4691993b6ed3a9a97, type: 2}
     - target: {fileID: 7383555350270463416, guid: 00c25a711299fa34b9b059df246c2d83, type: 3}
       propertyPath: m_Name
       value: PortalB
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00c25a711299fa34b9b059df246c2d83, type: 3}
+--- !u!1 &2028152266 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8916998761199093449, guid: 00c25a711299fa34b9b059df246c2d83, type: 3}
+  m_PrefabInstance: {fileID: 1844485689}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2028152267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028152266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3bef9d72c6bf334fb47721320a293d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 0}
+  portal: {fileID: 0}
+  otherPortal: {fileID: 0}
+--- !u!1 &2118845052 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8916998761199093449, guid: 00c25a711299fa34b9b059df246c2d83, type: 3}
+  m_PrefabInstance: {fileID: 806713781}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2118845053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118845052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3bef9d72c6bf334fb47721320a293d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 0}
+  portal: {fileID: 0}
+  otherPortal: {fileID: 0}
 --- !u!1001 &1207475246656308293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -632,6 +673,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1207475245711391380, guid: 6bfa5d892b7516144b0164c781a05355, type: 3}
+      propertyPath: mouseSensitivity
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 1207475245928519457, guid: 6bfa5d892b7516144b0164c781a05355, type: 3}
       propertyPath: m_RootOrder
       value: 2
