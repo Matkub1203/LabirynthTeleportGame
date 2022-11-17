@@ -21,6 +21,6 @@ public class Key : PickUp
 
     void Update()
     {
-        
+        Rotation();
     }
 }

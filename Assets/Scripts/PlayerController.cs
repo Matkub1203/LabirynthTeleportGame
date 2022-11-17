@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         {
             string terrainType = hit.collider.gameObject.tag;
 
-            switch (terrainType)
+            switch(terrainType)
             {
                 default:
                     speed = 12;
@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (hit.gameObject.tag == "PickUp")
+        if(hit.gameObject.tag == "PickUp")
         {
             hit.gameObject.GetComponent<PickUp>().Picked();
         }

@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -15,6 +14,16 @@ public class GameManager : MonoBehaviour
     public int redKey = 0;
     public int greenKey = 0;
     public int goldKey = 0;
+
+    public void AddPoints(int points)
+    {
+        points += points;
+    }
+
+    public void AddTime(int addTime)
+    {
+        timeToEnd += addTime;
+    }
 
     public void AddKey(KeyColor color)
     {
@@ -32,7 +41,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void PickUpChek()
+    public void FreezTime(int freez)
+    {
+        CancelInvoke("Stopper");
+        InvokeRepeating("Stopper", freez, 1);
+    }
+
+    void PickUpCheck()
     {
         if(Input.GetKeyDown(KeyCode.L))
         {
@@ -42,27 +57,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void AddPoints(int points)
-    {
-        points += points;
-    }
-
-    public void AddTime(int addTime)
-    {
-        timeToEnd += addTime;
-    }
-
-    public void FreezTime(int freez)
-    {
-        CancelInvoke("Stopper");
-        InvokeRepeating("Stopper", freez, 1);
-    }
-
-    
-
     void Start()
     {
-        if (gameManager == null)
+        if(gameManager == null)
         {
             gameManager = this;
         }
@@ -73,7 +70,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         PauseCheck();
-        PickUpChek();
+        PickUpCheck();
     }
 
     void Stopper()

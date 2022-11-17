@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Freez : PickUp
 {
-    public int freezTime = 1;
-    
+    public int freezTime = 10;
+
     public override void Picked()
     {
         GameManager.gameManager.FreezTime(freezTime);
